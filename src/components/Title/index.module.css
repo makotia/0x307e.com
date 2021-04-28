@@ -1,0 +1,17 @@
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+.text {
+  background: linear-gradient(90deg, rgb(39, 86, 255) 0%, rgba(0, 212, 255, 1) 100%);
+  display: inline-block;
+  color: transparent;
+  background-clip: text;
+  font-size: 35px;
+  margin: 0;
+}
+
+.subText {
+  color: gray;
+}
