@@ -1,7 +1,7 @@
 export type Account = {
-  serviceName: string,
-  screenName: string,
-  url: string,
+  serviceName: string;
+  screenName: string;
+  url: string;
 }
 
 export const accounts: Account[] = [
