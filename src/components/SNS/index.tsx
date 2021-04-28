@@ -24,18 +24,21 @@ const SNS: FunctionComponent = () => {
         </div>
         <div className={styles.gridChildRight}>
           <div className={styles.accounts}>
-            {accounts.map(a => {
-              return (
-                <div
-                  key={a.url}
-                  className={styles.table}
-                >
+            {accounts.map(a => (
+              <div
+                key={a.url}
+                className={styles.tableContainer}
+              >
+                <Spacer height={8} />
+                <div className={styles.table}>
                   <p className={styles.tableKey}>{a.serviceName}</p>
                   <Spacer width={16} />
                   <a href={a.url} className={styles.tableValue} target="_blank" rel="noreferrer">@{a.screenName}</a>
                 </div>
-              )
-            })}
+                <Spacer height={8} />
+              </div>
+            )
+            )}
           </div>
         </div>
       </div>
