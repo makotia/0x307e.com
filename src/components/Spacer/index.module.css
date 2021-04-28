@@ -1,0 +1,21 @@
+.spNone {
+  display: none;
+}
+
+.pcOnly {
+  display: block;
+}
+
+.default {
+  display: block;
+}
+
+@media screen and (max-width: 1000px) {
+  .spOnly {
+    display: block;
+  }
+
+  .pcOnly {
+    display: none;
+  }
+}

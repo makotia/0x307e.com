@@ -1,10 +1,15 @@
 /** @jsx h */
 import { h, FunctionalComponent } from "preact"
 
+import AboutMe from "@/components/AboutMe"
+import Container from "@/components/Container"
+
 const Home: FunctionalComponent = () => {
   return (
     <div>
-      Hello World.
+      <Container>
+        <AboutMe />
+      </Container>
     </div>
   )
 }
