@@ -1,14 +1,16 @@
 /** @jsx h */
 import { h, FunctionalComponent } from "preact"
 
-import AboutMe from "@/components/AboutMe"
 import Container from "@/components/Container"
+import SNS from "@/components/SNS"
+import Spacer from "@/components/Spacer"
 
 const Home: FunctionalComponent = () => {
   return (
     <div>
       <Container>
-        <AboutMe />
+        <SNS />
+        <Spacer height={64} />
       </Container>
     </div>
   )

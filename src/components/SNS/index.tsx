@@ -7,10 +7,10 @@ import { accounts } from "@/data/accounts"
 
 import styles from "./index.module.css"
 
-const AboutMe: FunctionComponent = () => {
+const SNS: FunctionComponent = () => {
   return (
     <div>
-      <Title title="About Me" subTitle="自分について" />
+      <Title title="SNS" subTitle="各種アカウント" />
       <div className={styles.grid}>
         <div className={styles.gridChildLeft}>
           <img
@@ -43,4 +43,4 @@ const AboutMe: FunctionComponent = () => {
   )
 }
 
-export default AboutMe
+export default SNS

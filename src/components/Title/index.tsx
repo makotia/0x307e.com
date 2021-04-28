@@ -17,6 +17,7 @@ const Title: FunctionComponent<Props> = ({ title, subTitle }: Props) => {
       <h2 className={styles.text}>
         {title}
       </h2>
+      <Spacer height={8} />
       <p className={styles.subText}>{subTitle}</p>
       <Spacer height={32} />
     </div>
