@@ -54,7 +54,7 @@
         ],
         "pathGroups": [
           {
-            "pattern": "react",
+            "pattern": "preact",
             "group": "external",
             "position": "before"
           }
