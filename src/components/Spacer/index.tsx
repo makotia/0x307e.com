@@ -3,7 +3,7 @@ import { FunctionComponent, h } from "preact"
 
 import styles from "./index.module.css"
 
-type SpacerNumbers = 0 | 2 | 4 | 8 | 16 | 32 | 64 | 128
+export type SpacerNumbers = 0 | 2 | 4 | 8 | 16 | 32 | 64 | 128
 
 type Props = {
   width?: SpacerNumbers,
