@@ -1,4 +1,5 @@
-import { h, FunctionalComponent } from 'preact'
+/** @jsx h */
+import { h, FunctionalComponent } from "preact"
 
 const Home: FunctionalComponent = () => {
   return (

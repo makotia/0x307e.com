@@ -21,6 +21,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@types/next": "^9.0.0",
     "next": "^10.0.0",
     "next-plugin-preact": "^3.0.3",
     "preact": "^10.5.5",
