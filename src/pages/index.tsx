@@ -2,6 +2,7 @@
 import { h, FunctionalComponent } from "preact"
 
 import Container from "@/components/Container"
+import Head from "@/components/Head"
 import Jobs from "@/components/Jobs"
 import SNS from "@/components/SNS"
 import Spacer from "@/components/Spacer"
@@ -9,6 +10,7 @@ import Spacer from "@/components/Spacer"
 const Home: FunctionalComponent = () => {
   return (
     <Container>
+      <Head />
       <Jobs />
       <Spacer height={64} />
       <SNS />
