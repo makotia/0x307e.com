@@ -8,11 +8,11 @@ const HeadComponent: FunctionComponent = () => (
     <title>0x307e.com</title>
     <meta property="og:title" content="0x307e.com" />
     <meta property="og:description" content="Portfolio" />
-    <meta property="og:type" content="blog" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://0x307e.com" />
     <meta property="og:image" content="https://0x307e.com/ogp.png" />
     <meta property="og:site_name" content="0x307e.com" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@0x307E" />
     <meta name="twitter:url" content="https://0x307e.com/ogp.png" />
     <meta name="twitter:title" content="0x307e.com" />
