@@ -1,6 +1,7 @@
 /** @jsx h */
 import { FunctionComponent, h } from "preact"
 
+import { GA_TRACKING_ID } from "@/lib/gtag"
 import Head from "next/head"
 
 const HeadComponent: FunctionComponent = () => (
@@ -18,6 +19,22 @@ const HeadComponent: FunctionComponent = () => (
     <meta name="twitter:title" content="0x307e.com" />
     <meta name="twitter:description" content="Portfolio" />
     <meta name="twitter:image" content="https://0x307e.com/ogp.png" />
+    {GA_TRACKING_ID && (
+      <>
+        <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}', {
+                  page_path: window.location.pathname,
+                });`,
+          }}
+        />
+      </>
+    )}
   </Head>
 )
 
