@@ -19,6 +19,7 @@
 
 .tableContent {
   white-space: pre-line;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 1000px) {
