@@ -25,7 +25,7 @@
 
 .subName {
   font-size: 15px;
-  color: gray;
+  opacity: 0.8;
 }
 
 .accounts {
@@ -57,6 +57,7 @@
   width: 150px;
   align-self: center;
   text-align: left;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 1000px) {
