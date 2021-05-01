@@ -68,6 +68,10 @@
   .table {
     margin: 0 auto;
   }
+
+  .tableContainer {
+    width: 100%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
