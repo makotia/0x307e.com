@@ -21,7 +21,10 @@ const HeadComponent: FunctionComponent = () => (
     <meta name="twitter:image" content="https://0x307e.com/ogp.png" />
     {GA_TRACKING_ID && (
       <>
-        <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+        <script
+          async={true}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -30,7 +33,7 @@ const HeadComponent: FunctionComponent = () => (
                 gtag('js', new Date());
                 gtag('config', '${GA_TRACKING_ID}', {
                   page_path: window.location.pathname,
-                });`,
+                });`
           }}
         />
       </>
