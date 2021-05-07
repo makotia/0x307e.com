@@ -8,21 +8,21 @@ import "normalize.css"
 import "@/styles/global.css"
 
 type Props = {
-  Component: FunctionalComponent;
-  pageProps: JSX.IntrinsicAttributes;
+  Component: FunctionalComponent
+  pageProps: JSX.IntrinsicAttributes
 }
 
 const App: FunctionalComponent<Props> = ({ Component, pageProps }: Props) => {
-  const router = useRouter();
+  const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
+      gtag.pageview(url)
+    }
+    router.events.on("routeChangeComplete", handleRouteChange)
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+      router.events.off("routeChangeComplete", handleRouteChange)
+    }
+  }, [router.events])
   return <Component {...pageProps} />
 }
 

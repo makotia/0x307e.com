@@ -1,14 +1,14 @@
 export type Account = {
-  serviceName: string;
-  screenName: string;
-  url: string;
+  serviceName: string
+  screenName: string
+  url: string
 }
 
 export const accounts: Account[] = [
   {
     serviceName: "GitHub",
     screenName: "makotia",
-    url: "https://github.com/makotia",
+    url: "https://github.com/makotia"
   },
   {
     serviceName: "Twitter",
@@ -29,5 +29,5 @@ export const accounts: Account[] = [
     serviceName: "Wantedly",
     screenName: "makotia",
     url: "https://www.wantedly.com/id/makotia"
-  },
+  }
 ]

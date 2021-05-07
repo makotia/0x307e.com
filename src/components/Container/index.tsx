@@ -9,9 +9,7 @@ type Props = {
 
 const Container: FunctionComponent<Props> = ({ children }: Props) => (
   <div className={styles.container}>
-    <div className={styles.children}>
-      {children}
-    </div>
+    <div className={styles.children}>{children}</div>
   </div>
 )
 

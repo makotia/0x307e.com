@@ -3,10 +3,24 @@ import { FunctionComponent, h } from "preact"
 
 import SkillCard from "@/components/SkillCard"
 import Spacer from "@/components/Spacer"
-import { BiBed, BiBuildingHouse, BiCamera, BiHeadphone, BiWalk } from "react-icons/bi"
+import {
+  BiBed,
+  BiBuildingHouse,
+  BiCamera,
+  BiHeadphone,
+  BiWalk
+} from "react-icons/bi"
 import { CgCreditCard } from "react-icons/cg"
 import { DiReact, DiGo, DiLinux, DiGit, DiRust } from "react-icons/di"
-import { SiDocker, SiKubernetes, SiNetflix, SiNim, SiNintendoswitch, SiRaspberrypi, SiTypescript } from "react-icons/si"
+import {
+  SiDocker,
+  SiKubernetes,
+  SiNetflix,
+  SiNim,
+  SiNintendoswitch,
+  SiRaspberrypi,
+  SiTypescript
+} from "react-icons/si"
 
 import styles from "./index.module.css"
 
@@ -21,7 +35,10 @@ const Me: FunctionComponent = () => (
           <p className={styles.subNotice}>Icon is not me.</p>
         </div>
         <div className={styles.heroIconContainer}>
-          <img className={styles.heroIcon} src="https://github.com/makotia.png" />
+          <img
+            className={styles.heroIcon}
+            src="https://github.com/makotia.png"
+          />
         </div>
       </div>
       <Spacer height={32} />

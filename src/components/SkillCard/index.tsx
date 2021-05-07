@@ -6,12 +6,16 @@ import Spacer, { SpacerNumbers } from "@/components/Spacer"
 import styles from "./index.module.css"
 
 type Props = {
-  children: ComponentChildren;
-  skillName: string;
-  space?: SpacerNumbers;
+  children: ComponentChildren
+  skillName: string
+  space?: SpacerNumbers
 }
 
-const SkillCard: FunctionalComponent<Props> = ({ children, skillName, space = 4 }: Props) => (
+const SkillCard: FunctionalComponent<Props> = ({
+  children,
+  skillName,
+  space = 4
+}: Props) => (
   <div className={styles.skillCard}>
     <Spacer width={4} />
     {children}

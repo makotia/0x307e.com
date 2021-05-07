@@ -13,10 +13,7 @@ const SNS: FunctionComponent = () => {
       <Title title="SNS" subTitle="各種アカウント" />
       <div className={styles.grid}>
         <div className={styles.gridChildLeft}>
-          <img
-            className={styles.icon}
-            src="https://github.com/makotia.png"
-          />
+          <img className={styles.icon} src="https://github.com/makotia.png" />
           <Spacer height={8} />
           <p className={styles.name}>makotia</p>
           <p className={styles.subName}>a.k.a. Makoto Ito</p>
@@ -24,21 +21,24 @@ const SNS: FunctionComponent = () => {
         </div>
         <div className={styles.gridChildRight}>
           <div className={styles.accounts}>
-            {accounts.map(a => (
-              <div
-                key={a.url}
-                className={styles.tableContainer}
-              >
+            {accounts.map((a) => (
+              <div key={a.url} className={styles.tableContainer}>
                 <Spacer height={8} />
                 <div className={styles.table}>
                   <p className={styles.tableKey}>{a.serviceName}</p>
                   <Spacer width={16} />
-                  <a href={a.url} className={styles.tableValue} target="_blank" rel="noreferrer">@{a.screenName}</a>
+                  <a
+                    href={a.url}
+                    className={styles.tableValue}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    @{a.screenName}
+                  </a>
                 </div>
                 <Spacer height={8} />
               </div>
-            )
-            )}
+            ))}
           </div>
         </div>
       </div>

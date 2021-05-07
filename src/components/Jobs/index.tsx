@@ -12,7 +12,7 @@ const Jobs: FunctionComponent = () => {
     <div>
       <Title title="Jobs" subTitle="お仕事" />
       <div>
-        {jobs.map(j => (
+        {jobs.map((j) => (
           <div key={j.name}>
             <div className={styles.table}>
               <div>
