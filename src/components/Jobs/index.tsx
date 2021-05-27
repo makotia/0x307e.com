@@ -10,34 +10,32 @@ type Props = {
   className?: string;
 }
 
-const Component: FunctionComponent<Props> = (props) => {
-  return (
-    <div className={props.className}>
-      <SectionTitle title="Jobs" subTitle="お仕事" />
-      <div>
-        {jobs.map((j) => (
-          <div key={j.name}>
-            <div className="table">
-              <div>
-                <p className="tablePeriod">
-                  {j.start}〜{j.end}&nbsp;
+const Component: FunctionComponent<Props> = (props) => (
+  <div className={props.className}>
+    <SectionTitle title="Jobs" subTitle="お仕事" />
+    <div>
+      {jobs.map((j) => (
+        <div key={j.name}>
+          <div className="table">
+            <div>
+              <p className="tablePeriod">
+                {j.start}〜{j.end}&nbsp;
                   {jobTypes[j.type]}
-                </p>
-                <Spacer height={4} />
-                <p className="tableName">{j.name}</p>
-                <Spacer height={8} spOnly />
-              </div>
-              <div>
-                <p className="tableContent">{j.content}</p>
-              </div>
+              </p>
+              <Spacer height={4} />
+              <p className="tableName">{j.name}</p>
+              <Spacer height={8} spOnly />
             </div>
-            <Spacer height={8} />
+            <div>
+              <p className="tableContent">{j.content}</p>
+            </div>
           </div>
-        ))}
-      </div>
+          <Spacer height={8} />
+        </div>
+      ))}
     </div>
-  )
-}
+  </div>
+)
 
 const StyledComponent = styled(Component)`
   .table {
