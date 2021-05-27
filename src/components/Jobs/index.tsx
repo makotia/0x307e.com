@@ -1,31 +1,34 @@
 /** @jsx h */
 import { FunctionComponent, h } from "preact"
 
+import SectionTitle from "@/components/SectionTitle"
 import Spacer from "@/components/Spacer"
-import Title from "@/components/Title"
 import { jobs, jobTypes } from "@/data/jobs"
+import styled from "styled-components"
 
-import styles from "./index.module.css"
+type Props = {
+  className?: string;
+}
 
-const Jobs: FunctionComponent = () => {
+const Component: FunctionComponent<Props> = (props) => {
   return (
-    <div>
-      <Title title="Jobs" subTitle="お仕事" />
+    <div className={props.className}>
+      <SectionTitle title="Jobs" subTitle="お仕事" />
       <div>
         {jobs.map((j) => (
           <div key={j.name}>
-            <div className={styles.table}>
+            <div className="table">
               <div>
-                <p className={styles.tablePeriod}>
+                <p className="tablePeriod">
                   {j.start}〜{j.end}&nbsp;
                   {jobTypes[j.type]}
                 </p>
                 <Spacer height={4} />
-                <p className={styles.tableName}>{j.name}</p>
+                <p className="tableName">{j.name}</p>
                 <Spacer height={8} spOnly />
               </div>
               <div>
-                <p className={styles.tableContent}>{j.content}</p>
+                <p className="tableContent">{j.content}</p>
               </div>
             </div>
             <Spacer height={8} />
@@ -36,4 +39,46 @@ const Jobs: FunctionComponent = () => {
   )
 }
 
-export default Jobs
+const StyledComponent = styled(Component)`
+  .table {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    min-height: 8rem;
+    line-height: 1.8rem;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: .5rem;
+  }
+
+  .tablePeriod {
+    color: gray;
+    font-size: 0.8rem;
+  }
+
+  .tableName {
+    font-size: 24px;
+  }
+
+  .tableContent {
+    white-space: pre-line;
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .table {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .table {
+      background-color: #333;
+    }
+  }
+`;
+
+const Container: FunctionComponent = props => (
+  <StyledComponent {...props} />
+)
+
+export default Container

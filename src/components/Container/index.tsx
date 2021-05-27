@@ -1,16 +1,33 @@
 /** @jsx h */
 import { ComponentChildren, FunctionComponent, h } from "preact"
 
-import styles from "./index.module.css"
+import styled from "styled-components"
 
-type Props = {
+export type ContainerProps = {
   children: ComponentChildren
 }
 
-const Container: FunctionComponent<Props> = ({ children }: Props) => (
-  <div className={styles.container}>
-    <div className={styles.children}>{children}</div>
+type Props = {
+  className?: string;
+} & ContainerProps
+
+const Component: FunctionComponent<Props> = props => (
+  <div className={props.className}>
+    <div>{props.children}</div>
   </div>
+)
+
+const StyledComponent = styled(Component)`
+  max-width: 100vw;
+  width: 1000px;
+  margin: 0 auto;
+  > .div {
+    padding: 0 .5rem;
+  }
+`;
+
+const Container: FunctionComponent<ContainerProps> = props => (
+  <StyledComponent {...props} />
 )
 
 export default Container

@@ -1,25 +1,29 @@
-/** @jsx h */
+/*** @jsx h */
 import { FunctionComponent, h } from "preact"
 
-import Spacer from "@/components/Spacer"
+import styled from "styled-components"
 
-import styles from "./index.module.css"
+export type ContainerProps = {
+  title: string;
+}
 
 type Props = {
-  title: string
-  subTitle: string
-}
+  className?: string;
+} & ContainerProps
 
-const Title: FunctionComponent<Props> = ({ title, subTitle }: Props) => {
-  return (
-    <div className={styles.container}>
-      <Spacer height={32} />
-      <h2 className={styles.text}>{title}</h2>
-      <Spacer height={8} />
-      <p className={styles.subText}>{subTitle}</p>
-      <Spacer height={32} />
-    </div>
-  )
-}
+const Component: FunctionComponent<Props> = props => (
+  <h2 className={props.className}>{props.title}</h2>
+)
 
-export default Title
+const StyledComponent = styled(Component)`
+  color: #03cafc;
+  display: inline-block;
+  font-size: 35px;
+  margin: 0;
+`
+
+const Container: FunctionComponent<ContainerProps> = (props) => (
+  <StyledComponent {...props} />
+)
+
+export default Container
