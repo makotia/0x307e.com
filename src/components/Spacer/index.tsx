@@ -29,15 +29,17 @@ const Component: FunctionComponent<Props> = ({
   if (!spOnly && !pcOnly) classNames.push("default")
 
   return (
-    <span
-      className={`${className} ${classNames.join(" ")}`}
-      style={{ width: width, height: height }}
-    />
+    <div className={className}>
+      <span
+        className={classNames.join(" ")}
+        style={{ width: width, height: height }}
+      />
+    </div>
   )
 }
 
 const StyledComponent = styled(Component)`
-.spNone {
+.spOnly {
   display: none;
 }
 
