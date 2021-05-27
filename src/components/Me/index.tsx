@@ -21,30 +21,33 @@ import {
   SiRaspberrypi,
   SiTypescript
 } from "react-icons/si"
+import styled from "styled-components"
 
-import styles from "./index.module.css"
+type Props = {
+  className?: string;
+}
 
-const Me: FunctionComponent = () => (
-  <div className={styles.container}>
-    <div className={styles.wrapper}>
+const Component: FunctionComponent<Props> = (props) => (
+  <div className={props.className}>
+    <div className="wrapper">
       <Spacer height={32} />
-      <div className={styles.hero}>
-        <div className={styles.heroContent}>
-          <p className={styles.title}>Hi!</p>
-          <p className={styles.title}>I&apos;m makotia</p>
-          <p className={styles.subNotice}>Icon is not me.</p>
+      <div className="hero">
+        <div className="heroContent">
+          <p className="title">Hi!</p>
+          <p className="title">I&apos;m makotia</p>
+          <p className="subNotice">Icon is not me.</p>
         </div>
-        <div className={styles.heroIconContainer}>
+        <div className="heroIconContainer">
           <img
-            className={styles.heroIcon}
+            className="heroIcon"
             src="https://github.com/makotia.png"
           />
         </div>
       </div>
       <Spacer height={32} />
-      <p className={styles.subTitle}>I&apos;m good at ...</p>
+      <p className="subTitle">I&apos;m good at ...</p>
       <Spacer height={16} />
-      <div className={styles.skillCardContainer}>
+      <div className="skillCardContainer">
         <SkillCard skillName="React">
           <DiReact size={40} />
         </SkillCard>
@@ -65,9 +68,9 @@ const Me: FunctionComponent = () => (
         </SkillCard>
       </div>
       <Spacer height={32} />
-      <p className={styles.subTitle}>I&apos;m interested in ...</p>
+      <p className="subTitle">I&apos;m interested in ...</p>
       <Spacer height={16} />
-      <div className={styles.skillCardContainer}>
+      <div className="skillCardContainer">
         <SkillCard skillName="Rust">
           <DiRust size={40} />
         </SkillCard>
@@ -88,9 +91,9 @@ const Me: FunctionComponent = () => (
         </SkillCard>
       </div>
       <Spacer height={32} />
-      <p className={styles.subTitle}>In my free time ...</p>
+      <p className="subTitle">In my free time ...</p>
       <Spacer height={16} />
-      <div className={styles.skillCardContainer}>
+      <div className="skillCardContainer">
         <SkillCard skillName="Walking">
           <BiWalk size={40} />
         </SkillCard>
@@ -114,4 +117,79 @@ const Me: FunctionComponent = () => (
   </div>
 )
 
-export default Me
+const StyledComponent = styled(Component)`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    width: 100%;
+    margin: auto 0;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .heroContent {
+    width: 700px;
+  }
+
+  .heroIcon {
+    width: 230px;
+    border-radius: 10%;
+  }
+
+  .title {
+    font-size: 100px;
+  }
+
+  .subNotice {
+    color: gray;
+  }
+
+  .subTitle {
+    font-size: 30px;
+  }
+
+  .skillCardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .hero {
+      flex-direction: column-reverse;
+    }
+
+    .heroContent {
+      width: 100%;
+      text-align: center;
+    }
+
+    .heroIconContainer {
+      width: 100%;
+      text-align: center;
+    }
+
+    .heroIcon {
+      width: 200px;
+    }
+
+    .title {
+      font-size: 50px;
+    }
+
+    .subTitle {
+      font-size: 25px;
+    }
+  }
+`;
+
+const Container: FunctionComponent = props => (
+  <StyledComponent {...props} />
+)
+
+export default Container

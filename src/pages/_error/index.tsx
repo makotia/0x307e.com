@@ -1,12 +1,29 @@
 /** @jsx h */
 import { FunctionComponent, h } from "preact"
 
-import styles from "./index.module.css"
+import styled from "styled-components"
 
-const ErrorPage: FunctionComponent = () => (
-  <div className={styles.container}>
+type Props = {
+  className?: string;
+}
+
+const Component: FunctionComponent<Props> = props => (
+  <div className={props.className}>
     <p>エラー</p>
   </div>
 )
 
-export default ErrorPage
+const StyledComponent = styled(Component)`
+  min-height: 100vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+`
+
+const Container: FunctionComponent = props => (
+  <StyledComponent {...props} />
+)
+
+export default Container
