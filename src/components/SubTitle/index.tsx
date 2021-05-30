@@ -12,7 +12,7 @@ type Props = {
 } & ContainerProps
 
 const Component: FunctionComponent<Props> = props => (
-  <h2 className={props.className}>{props.subTitle}</h2>
+  <h3 className={props.className}>{props.subTitle}</h3>
 )
 
 const StyledComponent = styled(Component)`
