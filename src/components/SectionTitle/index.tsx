@@ -3,6 +3,7 @@ import { FunctionComponent, h } from "preact"
 
 import styled from "styled-components"
 
+import SubTitle from "../SubTitle"
 import Title from "../Title"
 
 type ContainerProps = {
@@ -15,10 +16,15 @@ type Props = {
 } & ContainerProps
 
 const Component: FunctionComponent<Props> = (props) => (
-  <Title {...props} />
+  <div className={props.className}>
+    <Title title={props.title} />
+    <SubTitle subTitle={props.subTitle} />
+  </div>
 )
 
 const StyledComponent = styled(Component)`
+  display: flex;
+  flex-direction: column;
   text-align: center;
   width: 100%;
 `;

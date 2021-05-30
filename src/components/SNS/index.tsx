@@ -14,10 +14,10 @@ const Component: FunctionComponent<Props> = (props) => (
   <div className={props.className}>
     <div className="container">
       <SectionTitle title="SNS" subTitle="各種アカウント" />
-      <Spacer height={8} />
+      <Spacer height={32} />
       <div className="iconContainer">
         <img className="icon" src="https://github.com/makotia.png" />
-        <Spacer height={8} />
+        <Spacer height={16} />
         <p className="name">makotia</p>
         <p className="subName">a.k.a. Makoto Ito</p>
         <Spacer height={32} />

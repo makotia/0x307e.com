@@ -14,7 +14,7 @@ const Component: FunctionComponent<Props> = (props) => (
   <div className={props.className}>
     <Spacer height={32} />
     <SectionTitle title="Jobs" subTitle="お仕事" />
-    <Spacer height={8} />
+    <Spacer height={32} />
     <div className="gridContainer">
       {jobs.map((j) => (
         <div key={j.name}>
