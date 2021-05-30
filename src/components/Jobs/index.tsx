@@ -12,7 +12,9 @@ type Props = {
 
 const Component: FunctionComponent<Props> = (props) => (
   <div className={props.className}>
+    <Spacer height={32} />
     <SectionTitle title="Jobs" subTitle="お仕事" />
+    <Spacer height={8} />
     <div className="gridContainer">
       {jobs.map((j) => (
         <div key={j.name}>
@@ -37,7 +39,7 @@ const Component: FunctionComponent<Props> = (props) => (
 const StyledComponent = styled(Component)`
   .gridContainer {
     display: grid;
-    gap: 1rem 0;
+    gap: .5rem 0;
     grid-template-columns: 1fr;
   }
 

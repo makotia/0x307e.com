@@ -12,51 +12,55 @@ type Props = {
 
 const Component: FunctionComponent<Props> = (props) => (
   <div className={props.className}>
-    <SectionTitle title="SNS" subTitle="各種アカウント" />
-    <div className="grid">
-      <div className="gridChildLeft">
+    <div className="container">
+      <SectionTitle title="SNS" subTitle="各種アカウント" />
+      <Spacer height={8} />
+      <div className="iconContainer">
         <img className="icon" src="https://github.com/makotia.png" />
         <Spacer height={8} />
         <p className="name">makotia</p>
         <p className="subName">a.k.a. Makoto Ito</p>
-        <Spacer height={16} spOnly />
+        <Spacer height={32} />
       </div>
-      <div className="gridChildRight">
-        <div className="accounts">
-          {accounts.map((a) => (
-            <div key={a.url} className="tableContainer">
-              <Spacer height={8} />
-              <div className="table">
-                <p className="tableKey">{a.serviceName}</p>
-                <Spacer width={16} />
-                <a
-                  href={a.url}
-                  className="tableValue"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  @{a.screenName}
-                </a>
-              </div>
-              <Spacer height={8} />
+      <div className="accounts">
+        {accounts.map((a) => (
+          <div key={a.url} className="tableContainer">
+            <Spacer height={8} />
+            <div className="table">
+              <p className="tableKey">{a.serviceName}</p>
+              <a
+                href={a.url}
+                className="tableValue"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @{a.screenName}
+              </a>
             </div>
-          ))}
-        </div>
+            <Spacer height={8} />
+          </div>
+        ))}
       </div>
     </div>
   </div>
 )
 
 const StyledComponent = styled(Component)`
+min-height: 100vh;
+justify-content: center;
+display: flex;
+
+.container {
+  margin: auto 0;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.gridChildLeft {
+.iconContainer {
   text-align: center;
-  margin-left: auto;
-  margin-right: 30px;
 }
 
 .gridChildRight {
@@ -80,48 +84,33 @@ const StyledComponent = styled(Component)`
 
 .accounts {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  height: 100%;
+  gap: .5rem;
 }
 
 .tableContainer {
   background-color: #f3f3f3;
-  width: 250px;
   margin: 4px 0;
   border-radius: 10px;
 }
 
 .table {
-  display: flex;
-  flex-direction: row;
+  width: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  padding: 0.5rem;
+  gap: .5rem 0;
 }
 
 .tableKey {
-  width: 150px;
   font-size: 20px;
-  text-align: right;
 }
 
 .tableValue {
-  width: 150px;
-  align-self: center;
-  text-align: left;
   opacity: 0.8;
-}
-
-@media screen and (max-width: 1000px) {
-  .gridChildLeft {
-    margin: 0px;
-  }
-
-  .table {
-    margin: 0 auto;
-  }
-
-  .tableContainer {
-    width: 100%;
-  }
 }
 
 @media (prefers-color-scheme: dark) {

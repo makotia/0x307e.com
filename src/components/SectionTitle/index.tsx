@@ -1,7 +1,6 @@
 /** @jsx h */
-import { Fragment, FunctionComponent, h } from "preact"
+import { FunctionComponent, h } from "preact"
 
-import Spacer from "@/components/Spacer"
 import styled from "styled-components"
 
 import Title from "../Title"
@@ -16,13 +15,7 @@ type Props = {
 } & ContainerProps
 
 const Component: FunctionComponent<Props> = (props) => (
-  <Fragment>
-    <Spacer height={32} />
-    <Title {...props} />
-    <Spacer height={8} />
-    {/* <StyledSubText {...props} /> */}
-    <Spacer height={32} />
-  </Fragment>
+  <Title {...props} />
 )
 
 const StyledComponent = styled(Component)`
