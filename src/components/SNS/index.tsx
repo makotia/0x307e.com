@@ -24,21 +24,20 @@ const Component: FunctionComponent<Props> = (props) => (
       </div>
       <div className="accounts">
         {accounts.map((a) => (
-          <div key={a.url} className="tableContainer">
+          <a
+            key={a.url}
+            className="tableContainer"
+            href={a.url}
+            target="_blank"
+            rel="noreferrer"
+          >
             <Spacer height={8} />
             <div className="table">
               <p className="tableKey">{a.serviceName}</p>
-              <a
-                href={a.url}
-                className="tableValue"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @{a.screenName}
-              </a>
+              <p className="tableValue">@{a.screenName}</p>
             </div>
             <Spacer height={8} />
-          </div>
+          </a>
         ))}
       </div>
     </div>
