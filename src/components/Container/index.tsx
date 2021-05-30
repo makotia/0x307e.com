@@ -21,9 +21,7 @@ const StyledComponent = styled(Component)`
   max-width: 100vw;
   width: 1000px;
   margin: 0 auto;
-  > .div {
-    padding: 0 .5rem;
-  }
+  padding: 0 .5rem;
 `;
 
 const Container: FunctionComponent<ContainerProps> = props => (

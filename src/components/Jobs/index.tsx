@@ -12,38 +12,44 @@ type Props = {
 
 const Component: FunctionComponent<Props> = (props) => (
   <div className={props.className}>
+    <Spacer height={32} />
     <SectionTitle title="Jobs" subTitle="お仕事" />
-    {jobs.map((j) => (
-      <div key={j.name}>
-        <div className="table">
-          <div>
-            <p className="tablePeriod">
-              {j.start}〜{j.end}&nbsp;
+    <Spacer height={32} />
+    <div className="gridContainer">
+      {jobs.map((j) => (
+        <div key={j.name}>
+          <div className="table">
+            <div>
+              <p className="tablePeriod">
+                {j.start}〜{j.end}&nbsp;
                   {jobTypes[j.type]}
-            </p>
-            <Spacer height={4} />
-            <p className="tableName">{j.name}</p>
-            <Spacer height={8} spOnly />
-          </div>
-          <div>
+              </p>
+              <Spacer height={4} />
+              <p className="tableName">{j.name}</p>
+              <Spacer height={8} spOnly />
+            </div>
             <p className="tableContent">{j.content}</p>
           </div>
         </div>
-        <Spacer height={8} />
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 )
 
 const StyledComponent = styled(Component)`
+  .gridContainer {
+    display: grid;
+    gap: .5rem 0;
+    grid-template-columns: 1fr;
+  }
+
   .table {
     display: grid;
     grid-template-columns: 400px 1fr;
-    min-height: 8rem;
     line-height: 1.8rem;
     background-color: #f3f3f3;
     border-radius: 10px;
-    padding: .5rem;
+    padding: 1rem;
   }
 
   .tablePeriod {
