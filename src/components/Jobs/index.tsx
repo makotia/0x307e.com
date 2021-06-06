@@ -21,7 +21,7 @@ const Component: FunctionComponent<Props> = (props) => (
           <div className="table">
             <div>
               <p className="tablePeriod">
-                {j.start}〜{j.end}&nbsp;
+                {j.start}〜{j.end || "現在"}&nbsp;
                   {jobTypes[j.type]}
               </p>
               <Spacer height={4} />
