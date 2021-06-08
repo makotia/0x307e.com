@@ -1,27 +1,11 @@
 /** @jsx h */
 import { FunctionComponent, h } from "preact"
 
-import SkillCard from "@/components/SkillCard"
 import Spacer from "@/components/Spacer"
-import {
-  BiBed,
-  BiBuildingHouse,
-  BiCamera,
-  BiHeadphone,
-  BiWalk
-} from "react-icons/bi"
-import { CgCreditCard } from "react-icons/cg"
-import { DiReact, DiGo, DiLinux, DiGit, DiRust } from "react-icons/di"
-import {
-  SiDocker,
-  SiKubernetes,
-  SiNetflix,
-  SiNim,
-  SiNintendoswitch,
-  SiRaspberrypi,
-  SiTypescript
-} from "react-icons/si"
+import { freeSkills, goodSkils, interestedSkills } from "@/data/skills"
 import styled from "styled-components"
+
+import SkillCardContainer from "../SkillCardContainer"
 
 type Props = {
   className?: string;
@@ -33,8 +17,8 @@ const Component: FunctionComponent<Props> = (props) => (
       <Spacer height={32} />
       <div className="hero">
         <div className="heroContent">
-          <p className="title">Hi!</p>
-          <p className="title">I&apos;m makotia</p>
+          <Title>Hi!</Title>
+          <Title>I&apos;m makotia</Title>
           <p className="subNotice">Icon is not me.</p>
         </div>
         <div className="heroIconContainer">
@@ -45,77 +29,31 @@ const Component: FunctionComponent<Props> = (props) => (
         </div>
       </div>
       <Spacer height={32} />
-      <p className="subTitle">I&apos;m good at ...</p>
-      <Spacer height={16} />
-      <div className="skillCardContainer">
-        <SkillCard skillName="React">
-          <DiReact size={40} />
-        </SkillCard>
-        <SkillCard skillName="Go">
-          <DiGo size={40} />
-        </SkillCard>
-        <SkillCard skillName="Linux">
-          <DiLinux size={40} />
-        </SkillCard>
-        <SkillCard skillName="TypeScript" space={8}>
-          <SiTypescript size={35} />
-        </SkillCard>
-        <SkillCard skillName="Git">
-          <DiGit size={40} />
-        </SkillCard>
-        <SkillCard skillName="Docker" space={8}>
-          <SiDocker size={35} />
-        </SkillCard>
-      </div>
+      <SkillCardContainer subTitle={"I'm good at ..."} skills={goodSkils} />
       <Spacer height={32} />
-      <p className="subTitle">I&apos;m interested in ...</p>
-      <Spacer height={16} />
-      <div className="skillCardContainer">
-        <SkillCard skillName="Rust">
-          <DiRust size={40} />
-        </SkillCard>
-        <SkillCard skillName="Nim" space={8}>
-          <SiNim size={35} />
-        </SkillCard>
-        <SkillCard skillName="k8s" space={8}>
-          <SiKubernetes size={35} />
-        </SkillCard>
-        <SkillCard skillName="IoT" space={8}>
-          <SiRaspberrypi size={35} />
-        </SkillCard>
-        <SkillCard skillName="FinTech" space={8}>
-          <CgCreditCard size={35} />
-        </SkillCard>
-        <SkillCard skillName="ReTech">
-          <BiBuildingHouse size={40} />
-        </SkillCard>
-      </div>
+      <SkillCardContainer subTitle="I'm interested in ..." skills={interestedSkills} />
       <Spacer height={32} />
-      <p className="subTitle">In my free time ...</p>
-      <Spacer height={16} />
-      <div className="skillCardContainer">
-        <SkillCard skillName="Walking">
-          <BiWalk size={40} />
-        </SkillCard>
-        <SkillCard skillName="Photo">
-          <BiCamera size={40} />
-        </SkillCard>
-        <SkillCard skillName="Music">
-          <BiHeadphone size={40} />
-        </SkillCard>
-        <SkillCard skillName="Gaming" space={8}>
-          <SiNintendoswitch size={35} />
-        </SkillCard>
-        <SkillCard skillName="Movie">
-          <SiNetflix size={35} />
-        </SkillCard>
-        <SkillCard skillName="Sleep">
-          <BiBed size={40} />
-        </SkillCard>
-      </div>
+      <SkillCardContainer subTitle="In my free time ..." skills={freeSkills} />
     </div>
   </div>
 )
+
+const Title = styled.p`
+  font-size: 100px;
+  line-height: 90px;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 50px;
+    line-height: 40px;
+  }
+`;
+
+const SubTitle = styled.p`
+  font-size: 30px;
+  @media screen and (max-width: 1000px) {
+    font-size: 25px;
+  }
+`;
 
 const StyledComponent = styled(Component)`
   min-height: 100vh;
@@ -141,16 +79,8 @@ const StyledComponent = styled(Component)`
     border-radius: 10%;
   }
 
-  .title {
-    font-size: 100px;
-  }
-
   .subNotice {
     color: gray;
-  }
-
-  .subTitle {
-    font-size: 30px;
   }
 
   .skillCardContainer {
@@ -176,14 +106,6 @@ const StyledComponent = styled(Component)`
 
     .heroIcon {
       width: 200px;
-    }
-
-    .title {
-      font-size: 50px;
-    }
-
-    .subTitle {
-      font-size: 25px;
     }
   }
 `;
