@@ -2,7 +2,7 @@
 import { FunctionComponent, h } from "preact"
 
 import Spacer from "@/components/Spacer"
-import { freeSkills, goodSkils, interestedSkills } from "@/data/skills"
+import { skills } from "@/data/skills"
 import styled from "styled-components"
 
 import SkillCardContainer from "../SkillCardContainer"
@@ -29,11 +29,11 @@ const Component: FunctionComponent<Props> = (props) => (
         </div>
       </div>
       <Spacer height={32} />
-      <SkillCardContainer subTitle={"I'm good at ..."} skills={goodSkils} />
+      <SkillCardContainer subTitle={"I'm good at ..."} skills={skills["good"]} />
       <Spacer height={32} />
-      <SkillCardContainer subTitle="I'm interested in ..." skills={interestedSkills} />
+      <SkillCardContainer subTitle="I'm interested in ..." skills={skills["interested"]} />
       <Spacer height={32} />
-      <SkillCardContainer subTitle="In my free time ..." skills={freeSkills} />
+      <SkillCardContainer subTitle="In my free time ..." skills={skills["free"]} />
     </div>
   </div>
 )
