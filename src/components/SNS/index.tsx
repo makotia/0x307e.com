@@ -19,7 +19,9 @@ const Component: FunctionComponent<Props> = (props) => (
         <img className="icon" src="https://github.com/makotia.png" />
         <Spacer height={16} />
         <p className="name">makotia</p>
-        <p className="subName">a.k.a. Makoto Ito</p>
+        <p className="subName">
+          a.k.a. Makoto Ito</p>
+        <small>@Shibuya, Tokyo</small>
         <Spacer height={32} />
       </div>
       <div className="accounts">
@@ -79,6 +81,10 @@ display: flex;
 .subName {
   font-size: 15px;
   opacity: 0.8;
+}
+
+small {
+  opacity: 0.6;
 }
 
 .accounts {
